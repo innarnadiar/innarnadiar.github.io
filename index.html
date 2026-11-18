@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innarcaya Nadiar Nasution | Data Analyst</title>
+<meta name="description" content="Data analyst with 7 years of project data and reporting at BP and KBR, plus research training in statistics. Python, R and hypothesis testing projects on retail promotions, insurance claims and wellbeing data.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://innarnadiar.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Innarcaya Nadiar Nasution | Data Analyst">
+<meta property="og:description" content="7 years of project data and reporting at BP and KBR. Python, R and statistics projects on retail, insurance and wellbeing data.">
+<meta property="og:url" content="https://innarnadiar.github.io/">
+<meta property="og:image" content="https://innarnadiar.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bar chart from the Alfamart promo analysis: 90.5% of bulk-bought promo volume came from stores near markets or wholesalers.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317212B'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23F2945A'%3EIN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  // Apply saved theme before paint to avoid a flash.
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --bg: #F5F2EB;
+    --surface: #FFFDF8;
+    --ink: #17212B;
+    --muted: #4C5863;
+    --line: #D8D1C3;
+    --accent: #A23E0A;
+    --accent-soft: #F3E1D3;
+    --ok: #2F6B3F;
+    --ok-soft: #DDEBDD;
+    --todo-bg: #FFE58A;
+    --todo-ink: #3A2C00;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --radius: 6px;
+    --wrap: 1120px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161B; --surface: #18202A; --ink: #ECE7DD; --muted: #A7B0B9;
+      --line: #2C3742; --accent: #F2945A; --accent-soft: #3A2618;
+      --ok: #8FCB9B; --ok-soft: #1E3324;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161B; --surface: #18202A; --ink: #ECE7DD; --muted: #A7B0B9;
+    --line: #2C3742; --accent: #F2945A; --accent-soft: #3A2618;
+    --ok: #8FCB9B; --ok-soft: #1E3324;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 1.0625rem/1.65 var(--sans);
+    overflow-wrap: break-word;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+  a:hover { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.25rem; }
+  .skip { position: absolute; left: -999px; top: .5rem; background: var(--ink); color: var(--bg); padding: .5rem .9rem; z-index: 10; }
+  .skip:focus { left: .5rem; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+
+  /* Header */
+  .site-head { border-bottom: 1px solid var(--line); background: var(--bg); position: sticky; top: 0; z-index: 5; }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; }
+  .brand { font-family: var(--serif); font-weight: 600; text-decoration: none; font-size: 1.1rem; }
+  .nav { display: flex; align-items: center; gap: 1.25rem; font-size: .95rem; }
+  .nav a { text-decoration: none; color: var(--muted); }
+  .nav a:hover { color: var(--ink); }
+  .theme-btn {
+    font: inherit; font-size: .85rem; color: var(--ink); background: transparent;
+    border: 1px solid var(--line); border-radius: 999px; padding: .3rem .8rem; cursor: pointer;
+  }
+  .theme-btn:hover { border-color: var(--ink); }
+  @media (max-width: 720px) { .nav .hide-sm { display: none; } }
+  .brand, .theme-btn { white-space: nowrap; }
+  @media (max-width: 500px) { .nav { gap: .8rem; } .nav .hide-xs { display: none; } }
+
+  /* Hero */
+  .hero { padding: clamp(3rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem); }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .eyebrow { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 1rem; }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+  .hero .lede { font-size: 1.2rem; color: var(--muted); max-width: 34ch; margin: 1.25rem 0 2rem; }
+  .btns { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600; font-size: .98rem;
+    padding: .75rem 1.25rem; border-radius: var(--radius); border: 1.5px solid var(--ink);
+  }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .btn-primary:hover { color: #11161B; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary:hover { color: #11161B; } }
+  .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* The register: the one memorable moment */
+  .register { background: var(--surface); border: 1.5px solid var(--ink); border-radius: var(--radius); box-shadow: 6px 6px 0 var(--accent); }
+  .register table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  .register caption {
+    text-align: left; padding: .8rem 1rem; border-bottom: 1.5px solid var(--ink);
+    font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  }
+  .register th, .register td { padding: .7rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  .register tr:last-child th, .register tr:last-child td { border-bottom: 0; }
+  .register thead th { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: .55rem; padding-bottom: .55rem; }
+  .register .id { color: var(--muted); white-space: nowrap; }
+  .register .val { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; white-space: nowrap; text-align: right; }
+  .register thead .r { text-align: right; }
+  .pill { display: inline-block; font-size: .72rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; margin-top: .3rem; }
+  .pill-done { background: var(--ok-soft); color: var(--ok); }
+  .pill-open { background: var(--accent-soft); color: var(--accent); }
+  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .register { margin-right: 6px; } }
+  @media (max-width: 420px) { .register .id { display: none; } .register th, .register td { padding: .6rem .7rem; } }
+
+  /* Sections */
+  section { padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--line); }
+  .sec-head { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; margin-bottom: 2.25rem; align-items: baseline; }
+  .sec-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); }
+  .sec-no { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .indent { margin-left: calc(200px + 2rem); }
+  @media (max-width: 860px) { .sec-head { grid-template-columns: 1fr; gap: .4rem; } .indent { margin-left: 0; } }
+
+  .about p { font-size: 1.15rem; max-width: 62ch; margin: 0; }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  @media (max-width: 860px) { .projects { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; }
+  .card figure { margin: 0; border-bottom: 1px solid var(--line); background: #fff; }
+  .card figure img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; }
+  .card-body { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: .9rem; flex: 1; }
+  .kicker { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  .card h3 { font-size: 1.4rem; }
+  .card p { margin: 0; }
+  .context { color: var(--muted); }
+  .meta { font-size: .95rem; }
+  .meta strong { font-weight: 600; }
+  .tools { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
+  .tools li { font-size: .8rem; border: 1px solid var(--line); border-radius: 4px; padding: .1rem .5rem; color: var(--muted); }
+  .results { margin: .2rem 0 0; display: grid; gap: .75rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .results div { display: grid; grid-template-columns: 9.5rem 1fr; gap: .9rem; align-items: baseline; }
+  .results dt { font-family: var(--serif); font-size: 1.3rem; white-space: nowrap; font-weight: 600; line-height: 1.2; }
+  .results dd { margin: 0; font-size: .92rem; color: var(--muted); }
+  @media (max-width: 420px) { .results div { grid-template-columns: 1fr; gap: .1rem; } }
+  .card-link { margin-top: auto; padding-top: .5rem; font-weight: 600; }
+
+  /* Placeholder marker: must be removed before publishing */
+  .todo { background: var(--todo-bg); color: var(--todo-ink); border: 1.5px dashed var(--todo-ink); padding: 0 .35rem; border-radius: 3px; font-weight: 600; }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 7.5rem; top: .4rem; bottom: .4rem; width: 1.5px; background: var(--line); }
+  .timeline > li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 2rem; padding: 0 0 2rem; position: relative; }
+  .timeline > li::before { content: ""; position: absolute; left: calc(7.5rem - 5px); top: .55rem; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); }
+  .timeline > li.edu::before { border-color: var(--accent); }
+  .when { font-size: .9rem; color: var(--muted); padding-top: .15rem; padding-right: 1rem; }
+  .what { padding-left: .25rem; }
+  .what h3 { font-family: var(--sans); font-size: 1.08rem; font-weight: 600; }
+  .what .org { color: var(--muted); font-size: .95rem; }
+  .what p, .what ul { margin: .4rem 0 0; max-width: 64ch; font-size: .97rem; }
+  .what ul { padding-left: 1.1rem; }
+  .what ul li + li { margin-top: .35rem; }
+  .tag { font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  @media (max-width: 560px) {
+    .timeline::before { left: 5px; }
+    .timeline > li { grid-template-columns: 1fr; padding-left: 1.6rem; }
+    .timeline > li::before { left: 0; }
+    .when { padding: 0; }
+    .what { padding-left: 0; }
+  }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem 2.5rem; }
+  .skills h3 { font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-bottom: .6rem; border-bottom: 1.5px solid var(--ink); margin-bottom: .8rem; }
+  .skills ul { list-style: none; margin: 0; padding: 0; }
+  .skills li { padding: .3rem 0; }
+  .skills .ev { display: block; font-size: .87rem; color: var(--muted); }
+  .soft { margin-top: 2.75rem; }
+  .soft ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem 2.5rem; }
+
+  /* Contact */
+  .contact-box { border-left: 4px solid var(--accent); padding: .5rem 0 .5rem 1.5rem; }
+  .contact-box p { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.3; margin: 0 0 1.5rem; max-width: 30ch; }
+  .links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .75rem 2rem; font-size: 1.05rem; }
+  .links .lbl { display: block; font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: .88rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">Innarcaya N. Nasution</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-xs" href="#projects">Projects</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a class="hide-sm" href="#skills">Skills</a>
+      <a class="hide-xs" href="#contact">Contact</a>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch colour theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Data Analyst</p>
+        <h1>Innarcaya Nadiar Nasution</h1>
+        <p class="lede">I clean messy data, test whether a decision really worked, and report the answer in plain words.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="register">
+        <table>
+          <caption>Status register</caption>
+          <thead>
+            <tr><th scope="col" class="id">ID</th><th scope="col">Item</th><th scope="col" class="r">Value</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="id num">R-01</td>
+              <th scope="row" style="font-weight:400">Project data and reporting on oil and gas projects for BP and KBR<br><span class="pill pill-done">Complete</span></th>
+              <td class="val num">7 yrs</td>
+            </tr>
+            <tr>
+              <td class="id num">R-02</td>
+              <th scope="row" style="font-weight:400">Controlled experiment, analyzed in R and SPSS<br><span class="pill pill-done">Complete</span></th>
+              <td class="val num">500 students</td>
+            </tr>
+            <tr>
+              <td class="id num">R-03</td>
+              <th scope="row" style="font-weight:400">Projects on GitHub, in Python<br><span class="pill pill-done">Complete</span></th>
+              <td class="val num">4</td>
+            </tr>
+            <tr>
+              <td class="id num">R-04</td>
+              <th scope="row" style="font-weight:400">Full-time data science bootcamp<br><span class="pill pill-open">In progress</span></th>
+              <td class="val num">45 wks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">01 · About</span><h2 id="about-h">From project reports to data analysis</h2></div>
+      <div class="about indent">
+        <p>I worked for seven years with project data on large oil and gas projects for KBR and BP. I cleaned inconsistent datasets, automated reports, built status dashboards and forecast project delays. Later I earned a master's degree in Educational Psychology at the University of Indonesia, where I designed experiments and tested the results with statistics. Today I am most interested in retail and customer behavior, in risk, and in checking whether a business decision really works. My goal is a data analyst role where I turn data into clear answers that a team can act on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">02 · Projects</span><h2 id="projects-h">Selected work</h2></div>
+
+      <div class="projects">
+        <!-- Project 1 -->
+        <article class="card">
+          <figure>
+            <img src="img/lossleader.webp" width="960" height="600" loading="lazy" decoding="async"
+                 alt="Horizontal bar chart: 90.5% of the promo volume bought in bulk came from stores near markets or wholesalers, 6.6% from residential stores and 2.9% from office-area stores.">
+          </figure>
+          <div class="card-body">
+            <p class="kicker">Retail analytics · Hypothesis testing</p>
+            <h3>Weekend promo leakage at a minimarket chain</h3>
+            <p class="context">Business question: are discounted weekend (JSM) promo items going to households, or being bought in bulk by resellers?</p>
+            <p class="meta"><strong>Role:</strong> <span class="todo">TO CONFIRM: solo or pair? The README names Thomas Dany Haryanto as author.</span></p>
+            <p class="meta"><strong>Approach:</strong> analyzed 455,148 point-of-sale rows (Jan 2021 – Aug 2025) from 1,003 stores. Used IQR thresholds to flag bulk receipts, then tested the changes with Mann-Whitney U, Welch's t-test with Cohen's d, and a two-proportion z-test.</p>
+            <ul class="tools" aria-label="Tools">
+              <li>Python</li><li>pandas</li><li>NumPy</li><li>SciPy</li><li>statsmodels</li><li>Matplotlib</li><li>Seaborn</li><li>Jupyter</li>
+            </ul>
+            <dl class="results">
+              <div><dt class="num">8.1→39.9%</dt><dd>Share of bulk purchases, ordinary days vs. promo days (8.14% vs. 39.92%).</dd></div>
+              <div><dt class="num">90.3%</dt><dd>Share of promo-day bulk receipts made at stores near markets or wholesalers (19,763 of 21,886).</dd></div>
+              <div><dt class="num">72.0%</dt><dd>Share of promo-day bulk transactions that used a member card, which points to an audit target.</dd></div>
+            </dl>
+            <a class="card-link" href="https://github.com/innarnadiar/LossLeaderPromo_Analysis">View the analysis on GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <figure>
+            <img src="img/travel-insurance.webp" width="960" height="600" loading="lazy" decoding="async"
+                 alt="Bar chart of the top 15 logistic regression coefficients. Agency C2B, Agency LWC and several product plans increase claim risk; Agency EPX and the Cancellation Plan decrease it.">
+          </figure>
+          <div class="card-body">
+            <p class="kicker">Insurance · Machine learning</p>
+            <h3>Travel insurance claim prediction</h3>
+            <p class="context">Business question: can an insurer flag which policies are likely to file a claim, when only 1.53% of policies ever do?</p>
+            <p class="meta"><strong>Role:</strong> team project (AlphaTeam), bootcamp capstone. <span class="todo">TO CONFIRM: which parts did you do?</span></p>
+            <p class="meta"><strong>Approach:</strong> cleaned 44,328 policies, compared 14 models with 5-fold stratified cross-validation, and chose a tuned logistic regression with balanced class weights. Explained the model with coefficients and SHAP, and ran a cost-benefit simulation.</p>
+            <ul class="tools" aria-label="Tools">
+              <li>Python</li><li>pandas</li><li>scikit-learn</li><li>imbalanced-learn</li><li>XGBoost</li><li>LightGBM</li><li>SHAP</li><li>Jupyter</li>
+            </ul>
+            <dl class="results">
+              <div><dt class="num">≈ 0.78</dt><dd>Recall on the test set: caught 104 of 134 claims. The trade-off is low precision (≈ 0.06).</dd></div>
+              <div><dt class="num">≈ 0.08</dt><dd>PR-AUC, compared with a random baseline of 0.015.</dd></div>
+              <div><dt class="num">62.1%</dt><dd>Lower simulated loss (USD 217,089), assuming USD 2,609 per missed claim. This cost comes from outside the dataset.</dd></div>
+            </dl>
+            <a class="card-link" href="https://github.com/naufalarkan2004-spec/Travel_Insurance_Machine_Learning_Project">View the team project on GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <figure>
+            <img src="img/indowhr.webp" width="960" height="600" loading="lazy" decoding="async"
+                 alt="Line chart of happiness scores for nine ASEAN countries from 2021 to 2025, with Indonesia highlighted in the middle of the group.">
+          </figure>
+          <div class="card-body">
+            <p class="kicker">Public data · Social indicators</p>
+            <h3>Indonesia in the World Happiness Report</h3>
+            <p class="context">Question: Indonesia's happiness score is rising, but is the country actually catching up with its peers?</p>
+            <p class="meta"><strong>Role:</strong> solo project.</p>
+            <p class="meta"><strong>Approach:</strong> compared Indonesia's 2021–2025 scores with the global average, ASEAN countries and countries with similar GDP. Checked which report factors move with the score, then cross-checked against BPS and Indonesian Social Survey data.</p>
+            <ul class="tools" aria-label="Tools">
+              <li><span class="todo">TO CONFIRM: tools used</span></li><li>Correlation analysis</li><li>Slide presentation</li>
+            </ul>
+            <dl class="results">
+              <div><dt class="num">+0.37</dt><dd>Rise in Indonesia's score from 2021 to 2025, which brought it close to the global average.</dd></div>
+              <div><dt class="num">6th of 9</dt><dd>Indonesia's position among ASEAN countries, flat because its neighbours rose just as fast.</dd></div>
+              <div><dt class="num">−9.5 M</dt><dd>Drop in middle-class population, 2019–2024 (BPS). Rising happiness scores don't match this real economic picture.</dd></div>
+            </dl>
+            <a class="card-link" href="https://github.com/innarnadiar/indowhr">View the analysis on GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card">
+          <figure>
+            <img src="img/thriftbookz.webp" width="960" height="600" loading="lazy" decoding="async"
+                 alt="Flowchart of the ThriftBookz report menu: show all books, search, filter by status, and a finance and performance report.">
+          </figure>
+          <div class="card-body">
+            <p class="kicker">Python app · Data model design</p>
+            <h3>ThriftBookz: stock and profit tracker</h3>
+            <p class="context">Business question: secondhand book sellers who sell on Instagram know their sales, but not their real profit or how much money is tied up in unsold books.</p>
+            <p class="meta"><strong>Role:</strong> solo project.</p>
+            <p class="meta"><strong>Approach:</strong> designed the data model and flowcharts, then built a command-line app with create, read, search, update and delete. It validates book condition, category and status as data is entered.</p>
+            <ul class="tools" aria-label="Tools">
+              <li>Python</li><li>tabulate</li><li>Flowcharts</li>
+            </ul>
+            <dl class="results">
+              <div><dt>Real profit</dt><dd>Each book's buying cost is locked when it is entered, so the finance report shows actual margin, not just sales.</dd></div>
+              <div><dt>Honest losses</dt><dd>Damaged or lost books stay in the report as losses instead of disappearing from the stock list.</dd></div>
+            </dl>
+            <a class="card-link" href="https://github.com/innarnadiar/thriftbookz">View the code on GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">03 · Experience</span><h2 id="exp-h">Experience and education</h2></div>
+      <ol class="timeline indent">
+        <li class="edu">
+          <div class="when num">2026 – now</div>
+          <div class="what">
+            <span class="tag">Training</span>
+            <h3>Data Science Bootcamp, 45 weeks full-time</h3>
+            <div class="org"><span class="todo">TO CONFIRM: provider (Purwadhika?)</span></div>
+            <p>Python, SQL, statistics and machine learning.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when num">2024</div>
+          <div class="what">
+            <span class="tag">Research</span>
+            <h3>Research Fellow</h3>
+            <div class="org">Cognitive, Affective, and Wellbeing Lab, University of Indonesia</div>
+            <p>Designed and ran a controlled experiment with 500 high school students on climate change literacy. I analyzed it with a 3×4 mixed ANOVA in R and SPSS. Treatment groups improved up to 24% more than the control group (p &lt; 0.05).</p>
+            <p>First Prize, National Three Minute Thesis Competition, Universitas Gadjah Mada (2024). Invited oral presentation, Asian Association of Social Psychology, Kuala Lumpur (2025).</p>
+          </div>
+        </li>
+        <li class="edu">
+          <div class="when num">2024</div>
+          <div class="what">
+            <span class="tag">Education</span>
+            <h3>Master of Educational Psychology (M.Si.)</h3>
+            <div class="org">University of Indonesia · GPA 3.71 · LPDP scholarship</div>
+            <p>Focus on experimental research. Published a systematic literature review in <a href="https://doi.org/10.33394/jk.v10i1.10633"><cite>Jurnal Kependidikan</cite> 10(1), 2024</a>.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when num">2013 – 2018</div>
+          <div class="what">
+            <span class="tag">Work</span>
+            <h3>Planning, reporting and systems roles</h3>
+            <div class="org">BP, Tangguh Expansion Project</div>
+            <ul>
+              <li><strong>Planning Engineer, offshore (2015–2018):</strong> tracked schedule and cost with Earned Value Management, forecast the probability of project delay, and produced daily, weekly and monthly reports and dashboards. I reconciled progress data with engineering, HSSE, operations, construction and commissioning teams.</li>
+              <li><strong>Report Engineer (2015):</strong> produced weekly and monthly project reports and drafted the monthly report to SKK Migas, Indonesia's upstream oil and gas regulator.</li>
+              <li><strong>Systems and Tools Specialist (2013–2015):</strong> maintained the action, risk, interface and engineering deviation registers. I built weekly status dashboards and found which departments and topics caused the most overdue items.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when num">2011 – 2013</div>
+          <div class="what">
+            <span class="tag">Work</span>
+            <h3>Data Engineer</h3>
+            <div class="org">KBR</div>
+            <p>Cleaned, prepared and analyzed large, inconsistent work breakdown structure and commissioning datasets for the Chevron Gorgon LNG (Australia) and BP Quad 204 (UK) projects. I also automated recurring and ad-hoc reports.</p>
+          </div>
+        </li>
+        <li class="edu">
+          <div class="when num">2011</div>
+          <div class="what">
+            <span class="tag">Education</span>
+            <h3>Bachelor of Computer Science (S.Kom.), Informatics</h3>
+            <div class="org">Institut Teknologi Sepuluh Nopember (ITS) · GPA 3.32</div>
+            <p>Final project: a service-oriented business intelligence application on ERP data, built with Pentaho.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">04 · Skills</span><h2 id="skills-h">Skills, with where I used them</h2></div>
+      <div class="indent">
+        <div class="skills">
+          <div>
+            <h3>Programming and tools</h3>
+            <ul>
+              <li>Python: pandas, NumPy, SciPy<span class="ev">Promo, insurance and ThriftBookz projects</span></li>
+              <li>R and SPSS<span class="ev">Mixed ANOVA, 500-student experiment</span></li>
+              <li>Jupyter, Git<span class="ev">All GitHub projects</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Statistics</h3>
+            <ul>
+              <li>Hypothesis testing<span class="ev">Mann-Whitney U, Welch's t-test, two-proportion z-test</span></li>
+              <li>Effect size and confidence intervals<span class="ev">Cohen's d, 95% CI</span></li>
+              <li>Experimental design and ANOVA<span class="ev">Research fellowship, University of Indonesia</span></li>
+              <li>Outlier detection<span class="ev">IQR thresholds for bulk purchases</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Machine learning</h3>
+            <ul>
+              <li>Classification with imbalanced data<span class="ev">Class weights, SMOTE, cross-validation</span></li>
+              <li>Model comparison and tuning<span class="ev">14 models, GridSearchCV</span></li>
+              <li>Model explanation<span class="ev">Coefficients and SHAP</span></li>
+              <li>Cost-benefit simulation<span class="ev">Insurance claim model</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Visualization and reporting</h3>
+            <ul>
+              <li>Matplotlib, Seaborn<span class="ev">Promo and insurance projects</span></li>
+              <li>Presenting findings as slides<span class="ev">World Happiness Report analysis</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="soft">
+          <div class="skills" style="display:block">
+            <h3>Working with people</h3>
+            <ul>
+              <li>Explaining results to non-specialists<span class="ev">First Prize, National Three Minute Thesis, 2024</span></li>
+              <li>Coordinating across teams<span class="ev">Reconciled progress data with five project teams at BP</span></li>
+              <li>Leading a program<span class="ev">Head of Program, Bantu Belajar Mahasiswa, ~150 students, 2022</span></li>
+              <li>English at work level<span class="ev">IELTS 7.0, CEFR C1 (2024); Indonesian native</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-no">05 · Contact</span><h2 id="contact-h">Let's talk</h2></div>
+      <div class="contact-box indent">
+        <p>I'm open to data analyst roles. Email is the fastest way to reach me.</p>
+        <ul class="links">
+          <li><span class="lbl">Email</span><a href="mailto:innarcaya@gmail.com">innarcaya@gmail.com</a></li>
+          <li><span class="lbl">LinkedIn</span><a href="https://www.linkedin.com/in/innarcayanasution/">in/innarcayanasution</a></li>
+          <li><span class="lbl">GitHub</span><a href="https://github.com/innarnadiar">github.com/innarnadiar</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Innarcaya Nadiar Nasution</div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-btn');
+    function current() {
+      var t = root.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function label() {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      btn.textContent = next === 'dark' ? 'Dark mode' : 'Light mode';
+      btn.setAttribute('aria-label', 'Switch to ' + next + ' mode');
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+    label();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
